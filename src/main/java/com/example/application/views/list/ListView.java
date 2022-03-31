@@ -34,7 +34,7 @@ public class ListView extends VerticalLayout {
 
         add(
           getToolbar(),
-          getContent()
+          getContent() //grid dihilangkan
         );
     }
 
