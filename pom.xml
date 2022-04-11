@@ -12,6 +12,7 @@
     <properties>
         <java.version>11</java.version>
         <vaadin.version>23.0.3</vaadin.version>
+        <vaadin.productionMode>true</vaadin.productionMode>
     </properties>
 
     <parent>
@@ -122,6 +123,10 @@
             <artifactId>vaadin-testbench</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>flow-server</artifactId>
+        </dependency>
         <!-- Include JUnit 4 support for TestBench and others -->
         <dependency>
             <groupId>org.junit.vintage</groupId>
@@ -209,6 +214,9 @@
                     <plugin>
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
+                        <configuration>
+                            <jvmArguments>-Dvaadin.productionMode</jvmArguments>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>start-spring-boot</id>

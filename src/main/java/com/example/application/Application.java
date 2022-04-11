@@ -22,6 +22,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 public class Application extends SpringBootServletInitializer implements AppShellConfigurator {
 
     public static void main(String[] args) {
+        System.getProperties().put("server.port", 8181); //port 8181
         SpringApplication.run(Application.class, args);
     }
 
